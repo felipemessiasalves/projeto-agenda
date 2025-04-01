@@ -1,23 +1,14 @@
-<% if(errors.length > 0) { %>
-<div class="row">
-    <div class="col my-3">
-        <div class="alert alert-danger">
-            <% errors.forEach(erro => { %>
-                <%= erro %><br>
-            <% }) %>
-        </div>
+<% if(typeof errors !== 'undefined' && errors.length > 0) { %>
+    <div class="alert alert-danger">
+      <% errors.forEach(function(error) { %>
+        <%= error %><br>
+      <% }); %>
     </div>
-</div>
-<% } %>
-
-<% if(success.length > 0) { %>
-<div class="row">
-    <div class="col my-3">
-        <div class="alert alert-success">
-            <% errors.forEach(success => { %>
-                <%= success %><br>
-            <% }) %>
-        </div>
+    
+  <% } else if(typeof success !== 'undefined' && success.length > 0) { %>
+    <div class="alert alert-success">
+      <% success.forEach(function(success) { %>
+        <%= success %><br>
+      <% }); %>
     </div>
-</div>
-<% } %>
+  <% } %>
